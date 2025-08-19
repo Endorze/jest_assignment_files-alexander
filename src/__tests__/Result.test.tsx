@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react';
-import Result from '.';
+import Result from '@/app/components/Result/result';
 import { IResult } from '@/interfaces/interfaces';
 
 test('should render a text of score result', () => {

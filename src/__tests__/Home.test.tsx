@@ -1,5 +1,5 @@
 import { screen, render, fireEvent, getByText } from '@testing-library/react';
-import Home from './page';
+import Home from '@/app/page';
 
 test('should render CreatePlayer component when no player name picked and GameBoard component is not rendered', () => {
     render(<Home />)

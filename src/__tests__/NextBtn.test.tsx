@@ -1,5 +1,5 @@
 import { screen, render } from '@testing-library/react';
-import NextBtn from '.';
+import NextBtn from '@/app/components/NextBtn/nextBtn';
 import { IQuizSet } from '@/interfaces/interfaces';
 
 test('should render a button', () => {

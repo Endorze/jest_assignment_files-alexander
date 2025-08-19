@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import GameHeader from '.';
+import GameHeader from '@/app/components/GameHeader/gameHeader';
 
 test('should have a game title with: "Coffee Quiz"', () => {
     render(<GameHeader player={''} />);

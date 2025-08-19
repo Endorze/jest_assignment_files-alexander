@@ -1,6 +1,6 @@
-import { screen, render, within, fireEvent, queryByTestId } from '@testing-library/react';
-import GameBoard from '.';
+import { screen, render, within, fireEvent } from '@testing-library/react';
 import { gameQuiz } from '@/data/data';
+import GameBoard from '@/app/components/GameBoard';
 
 test("should render a GameHeader component", () => {
     render(<GameBoard player='' />)
@@ -233,6 +233,6 @@ test("should render updated progress-bar each step", () => {
         fireEvent.click(nextBtn);
     })
 
-    expect(progressEl.value).toBe(gameQuiz.length-1);
+    expect(progressEl.value).toBe(gameQuiz.length - 1);
 })
 

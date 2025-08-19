@@ -1,6 +1,6 @@
 import { screen, render, within, fireEvent } from '@testing-library/react';
 import { gameQuiz } from '@/data/data';
-import GameBoard from '@/app/components/GameBoard';
+import GameBoard from '@/app/components/GameBoard/gameBoard';
 
 test("should render a GameHeader component", () => {
     render(<GameBoard player='' />)

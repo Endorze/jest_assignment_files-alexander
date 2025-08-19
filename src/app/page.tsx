@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import CreatePlayer from "./components/CreatePlayer/createPlayer";
+import GameBoard from "./components/GameBoard/gameBoard";
 
 export default function Home() {
   const [player, setPlayer] = useState<string>('')

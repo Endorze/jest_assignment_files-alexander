@@ -1,5 +1,5 @@
 import { screen, render, within } from '@testing-library/react';
-import QuizArea from '.';
+import QuizArea from '@/app/components/QuizArea/quizArea';
 import { IQuizSet } from '@/interfaces/interfaces';
 
 const mockData: IQuizSet = {

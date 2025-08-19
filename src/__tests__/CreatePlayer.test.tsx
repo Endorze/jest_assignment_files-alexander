@@ -1,6 +1,7 @@
-import { screen, render, fireEvent, getByLabelText } from '@testing-library/react';
+
+import CreatePlayer from '@/app/components/CreatePlayer/createPlayer';
+import { screen, render, fireEvent } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
-import CreatePlayer from '.';
 
 
 describe('button tests', () => {

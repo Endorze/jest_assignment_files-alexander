@@ -3,15 +3,16 @@ import { useState } from "react";
 import CreatePlayer from "./components/CreatePlayer/createPlayer";
 import GameBoard from "./components/GameBoard/gameBoard";
 
-export default function Home() {
-  const [player, setPlayer] = useState<string>('')
+ const Home = () =>  {
+  const [playerName, setPlayerName] = useState<string>('')
 
-  const handleSetPlayer = (inputValue: string) => setPlayer(inputValue);
+  const handleSetPName = (inputValue: string) => setPlayerName(inputValue);
 
-  //här ska en gameboard renderas, tex såhär?
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      {!player ? <CreatePlayer setPlayer={handleSetPlayer} /> : <GameBoard player={player} />}
+      {!playerName ? <CreatePlayer setPlayer={handleSetPName} /> : <GameBoard player={playerName} />}
     </div>
   );
 }
+
+export default Home;

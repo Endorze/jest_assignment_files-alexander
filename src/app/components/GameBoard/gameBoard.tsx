@@ -1,18 +1,17 @@
 import { gameQuiz } from "@/data/data";
 import { ReactElement, useState } from "react";
+
 import ProgressBar from "../ProgressBar/progressBar";
-
-//För att testerna inte ska crasha så måste dessa importeras just nu
-import QuizArea from "../QuizArea";
-import NextBtn from "../NextBtn";
-import Result from "../Result";
-import GameHeader from "../GameHeader";
+import QuizArea from "../QuizArea/quizArea";
+import NextBtn from "../NextBtn/nextBtn";
+import Result from "../Result/result";
+import GameHeader from "../GameHeader/gameHeader";
 
 
-export const GameBoard = ({ player }: { player: string }): ReactElement => {
+const GameBoard = ({ player }: { player: string }): ReactElement => {
+
     const [step, setStep] = useState<number>(0);
     const [answer, setAnswer] = useState<boolean>(false);
-
     const [rightAnswers, setRightAnswers] = useState<number>(0);
 
     const saveAnswer = (answerOption: number): void => {
@@ -32,17 +31,21 @@ export const GameBoard = ({ player }: { player: string }): ReactElement => {
     }
 
     return (
-        <div>
+        <div role="main">
             <GameHeader player={player} />
             {gameQuiz.length === step ?
                 <Result rightAnswers={rightAnswers} amountOfAnswers={gameQuiz.length} onClick={playAgain} />
                 :
-                <>
+                <div>
                     <ProgressBar step={step} gameQuiz={gameQuiz} />
                     <QuizArea answer={answer} step={step} onClick={saveAnswer} gameQuiz={gameQuiz} />
                     <NextBtn answer={answer} step={step} onClick={increaseStage} gameQuiz={gameQuiz} />
-                </>
+                </div>
+
             }
         </div>
+
     )
 }
+
+export default GameBoard;

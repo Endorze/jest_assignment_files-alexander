@@ -1,6 +1,5 @@
-import { screen, render, fireEvent, getByText } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import Home from '@/app/page';
-
 test('should render CreatePlayer component when no player name picked and GameBoard component is not rendered', () => {
     render(<Home />)
 
@@ -45,10 +44,10 @@ test('should render player name in GameBoard component when started', () => {
     const startBtn: HTMLElement = screen.getByRole('button', { name: /start game/i });
     const input: HTMLInputElement = screen.getByLabelText(/pick a name/i);
 
+    fireEvent.change(input, { target: { value: mockName } })
     expect(gameBoardEl).not.toBeInTheDocument();
     expect(createPalayerEl).toBeInTheDocument();
 
-    fireEvent.change(input, { target: { value: mockName } })
     fireEvent.click(startBtn);
 
     gameBoardEl = screen.queryByRole('main');

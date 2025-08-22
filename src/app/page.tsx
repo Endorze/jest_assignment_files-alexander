@@ -9,7 +9,7 @@ import GameBoard from "./components/GameBoard/gameBoard";
   const handleSetPName = (inputValue: string) => setPlayerName(inputValue);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col h-screen">
       {!playerName ? <CreatePlayer setPlayer={handleSetPName} /> : <GameBoard player={playerName} />}
     </div>
   );

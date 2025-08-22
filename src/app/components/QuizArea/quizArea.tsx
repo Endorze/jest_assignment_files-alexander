@@ -12,15 +12,15 @@ interface IQuizArea {
 const QuizArea = ({ answer, step, gameQuiz, onClick }: IQuizArea): ReactElement => {
     return (
         <div>
-            <h3>{gameQuiz[step].question}</h3>
+            <h3 className="pb-4">{gameQuiz[step].question}</h3>
 
-            <ul>
+            <div>
                 {gameQuiz && gameQuiz[step].alternatives.map((item: string, index: number) =>
-                    <li data-testid='alternative-item' className={`border border-white  text-center flex items-center justify-center ${!answer ? 'idle' : index === gameQuiz[step].answer ? 'correct' : 'wrong'}`} key={index}>
-                        <button disabled={answer} onClick={() => onClick(index)}>{item}</button>
-                    </li>
+                    <div data-testid='alternative-item' className={`text-center flex items-center justify-center mt-4 w-full ${!answer ? 'idle' : index === gameQuiz[step].answer ? 'correct' : 'wrong'}`} key={index}>
+                        <button className="w-full p-4" disabled={answer} onClick={() => onClick(index)}>{item}</button>
+                    </div>
                 )}
-            </ul>
+            </div>
 
         </div>
     )

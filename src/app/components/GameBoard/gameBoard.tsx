@@ -31,12 +31,12 @@ const GameBoard = ({ player }: { player: string }): ReactElement => {
     }
 
     return (
-        <div role="main">
+        <div role="main" className="flex flex-col bg-[var(--color-bg-main)] p-6 text-white max-w-[400px]">
             <GameHeader player={player} />
             {gameQuiz.length === step ?
                 <Result rightAnswers={rightAnswers} amountOfAnswers={gameQuiz.length} onClick={playAgain} />
                 :
-                <div>
+                <div className="flex flex-col gap-6">
                     <ProgressBar step={step} gameQuiz={gameQuiz} />
                     <QuizArea answer={answer} step={step} onClick={saveAnswer} gameQuiz={gameQuiz} />
                     <NextBtn answer={answer} step={step} onClick={increaseStage} gameQuiz={gameQuiz} />

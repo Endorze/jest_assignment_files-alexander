@@ -6,7 +6,7 @@ const CreatePlayer = ({ setPlayer }: { setPlayer: (s: string) => void }): ReactE
     const [currentInput, setCurrentInput] = useState<string>("");
 
     return (
-        <div data-testid='createPlayer' className="flex flex-col gap-4 bg-[var(--color-bg-main)] text-white px-24 py-12  shadow-2xl shadow-gray-500">
+        <div data-testid='createPlayer' className="flex flex-col gap-4 bg-[var(--color-bg-main)] text-white px-12 py-12  shadow-2xl shadow-gray-500">
 
             <label htmlFor='name' className="tracking-wide text-2xl mb-3">Pick a name</label>
             <input id='name' className="bg-white text-gray-900 px-2 placeholder:text-gray-500 outline-none" type="text" placeholder="Your name" value={currentInput} onChange={(e) => setCurrentInput(e.target.value)}
